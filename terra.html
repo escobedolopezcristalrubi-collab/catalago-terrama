@@ -1,0 +1,258 @@
+
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>chavita</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #00796b, #009688);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem; 
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: .5rem;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      background: #004d40;
+      padding: .8rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* --- FILTROS Y BUSCADOR --- */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .filters input, .filters select {
+      padding: .5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h3 {
+      margin: 0 0 .5rem;
+      font-size: 1.3rem;
+      color: #00796b;
+    }
+
+    .price {
+      color: #e91e63;
+      font-weight: bold;
+      margin-bottom: .5rem;
+      display: block;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .5rem 1rem;
+      background: #00796b;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #004d40;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #004d40;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>terramar chavita</h1>
+    <p>Catálogo en línea - Belleza y cuidado personal</p>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#contacto">Contacto</a> 
+  </nav>
+
+  <!-- CATÁLOGO -->
+  <section class="container" id="catalogo">
+    <h2>Catálogo Destacado</h2>
+
+    <!-- FILTROS -->
+    <div class="filters">
+      <input type="text" id="search" placeholder="Buscar producto...">
+      <select id="category">
+        <option value="all">Todas las categorías</option>
+        <option value="maquillaje">Maquillaje</option>
+        <option value="cuidado">Cuidado de la piel</option>
+        <option value="fragancias">Fragancias</option>
+      </select>
+    </div>
+
+    <div class="grid" id="productGrid">
+      <!-- Producto 1 -->
+      <div class="card" data-category="maquillaje">
+        <img src="img/producto1.jpg" alt="Base líquida">
+        <div class="card-content">
+          <h3>Base Líquida</h3>
+          <span class="price">$350.00</span>
+          <p>Cobertura ligera para un acabado natural.</p>
+          <a href="#" class="btn">Comprar</a>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="card" data-category="cuidado">
+        <img src="img/producto2.jpg" alt="Crema hidratante">
+        <div class="card-content">
+          <h3>Crema Hidratante</h3>
+          <span class="price">$280.00</span>
+          <p>Hidratación profunda para todo tipo de piel.</p>
+          <a href="#" class="btn">Comprar</a>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="card" data-category="fragancias">
+        <img src="img/producto3.jpg" alt="Perfume floral">
+        <div class="card-content">
+          <h3>Perfume Floral</h3>
+          <span class="price">$520.00</span>
+          <p>Aroma fresco con notas florales.</p>
+          <a href="#" class="btn">Comprar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="container" id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Quieres hacer un pedido o recibir más información? Escríbeme:</p>
+    <form>
+      <label for="nombre">Nombre:</label><br>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required><br><br>
+
+      <label for="email">Correo:</label><br>
+      <input type="email" id="email" name="email" placeholder="Tu correo" required><br><br>
+
+      <label for="mensaje">Mensaje:</label><br>
+      <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí..." required></textarea><br><br>
+
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Catálogo Terramar | Desarrollado con ❤️ </p>
+  </footer>
+
+  <script>
+    // --- FILTROS Y BUSCADOR ---
+    const searchInput = document.getElementById("search");
+    const categorySelect = document.getElementById("category");
+    const products = document.querySelectorAll(".card");
+
+    function filterProducts() {
+      const searchText = searchInput.value.toLowerCase();
+      const category = categorySelect.value;
+
+      products.forEach(product => {
+        const title = product.querySelector("h3").textContent.toLowerCase();
+        const productCategory = product.getAttribute("data-category");
+
+        const matchesSearch = title.includes(searchText);
+        const matchesCategory = (category === "all" || category === productCategory);
+
+        if (matchesSearch && matchesCategory) {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      });  
+    }
+
+    searchInput.addEventListener("input", filterProducts);
+    categorySelect.addEventListener("change", filterProducts);
+  </script>
+</body>
+</html>
