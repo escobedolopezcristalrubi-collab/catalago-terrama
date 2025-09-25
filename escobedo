@@ -1,0 +1,9 @@
+git init
+git add .
+git commit -m "Subiendo mi catálogo Terramar"
+git branch -M main
+git remote add origin https://github.com/TU-USUARIO/catalogo-terramar.git
+git push -u origin main  
+ main
+/(root)
+ https://tu-usuario.github.io/catalogo-terramar/
